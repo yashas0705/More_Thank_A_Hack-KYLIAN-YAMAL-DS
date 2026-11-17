@@ -1,14 +1,18 @@
 <div align="center">
 
-<!-- Dynamic Stadium Wave Banner -->
-<img src="https://vercel.app⚽%20PITCH%20COMMAND%20AI&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Frame-Level%20Ball%20Possession%20from%20Tactical%20Tracking%20Data&descAlignY=60&descSize=16" width="100%"/>
+<!-- Save your custom banner to assets/banner.png in your repository -->
+<img src="assets/banner.png" alt="KYLIAN YAMAL DS Tactical Banner" width="100%"/>
+
+# ⚽ PITCH COMMAND AI
+### Frame-Level Ball Possession from Tactical Tracking Data
 
 [![Competition](https://shields.io)]()
 [![Python](https://shields.io)]()
 [![Pipeline](https://shields.io)]()
 [![Zero ML](https://shields.io)]()
 
-**Team:** `KYLIAN YAMAL DS` | **Squad:** `Gaddam Yashas,Kaivalya R Nayak, Kevin Alexandar ` | **Submission:** `my_v4.csv`
+**Team:** `KYLIAN YAMAL DS` | **Submission File:** `my_v4.csv`  
+**Squad:** Gaddam Yashas • Kaivalya R Nayak • Kevin Alexandar
 
 *No black-box neural networks. No external data. Just pure tactical geometry, physics, and football IQ.*
 
@@ -79,17 +83,16 @@ How do we decide who owns the ball? **Control requires proximity and commitment:
 
 ---
 
-## 📊 Match Stats & Sanity Checks
+## 📊 Telemetry & Sanity Checks
 
 Running `my_v4.py` across the full match data reproduces expected tracking telemetry and produces realistic match flow:
 
-| Metric | Pipeline Output |
+| Telemetry Check | Pipeline Output |
 | :--- | :--- |
 | **Ball Visibility Reproduced** | `59.3%` of graded frames |
 | **Active Tracked Slots** | `20.5` average slots |
 | **Dead-Ball Share (`D`)** | `~42%` of graded frames |
 | **Total Possessions Detected** | `~200` spells (`~17 s` mean duration) |
-| **Public 5-Min Window (`17` spells)** | `macroF1`: **[FILL IN]** \| `spellF1`: **[FILL IN]** |
 
 ---
 
@@ -108,12 +111,15 @@ pip install -r requirements-mine.txt
 ### 2. Load the Match Files
 Place the downloaded competition match files inside the `data/` directory *(excluded from version control)*:
 ```text
+├── assets/
+│   └── banner.png
 ├── data/                  # <-- Place raw match files here
 ├── evaluation/
 │   ├── validate_submission.py
 │   └── results/
 ├── my_v4.py
-└── requirements-mine.txt
+├── requirements-mine.txt
+└── .gitignore
 ```
 
 ### 3. Run the Match Engine
@@ -137,7 +143,3 @@ python evaluation/validate_submission.py evaluation/results/my_v4.csv
 * **Window-Based Restarts:** Fixed Smart Tagging buffers can delay restart detection by a few seconds; future versions will trigger restarts on **first purposeful ball acceleration**.
 * **Proximity-Only Control:** Adding explicit **touch/pass impulse detection** and utilizing the Smart Tagging `Team` field on restarts will sharpen turnover precision.
 * **Multi-Match Calibration:** Current thresholds are grounded in football domain logic; training parameters across multiple labeled matches will improve cross-match generalization.
-
-<div align="center">
-  <img src="https://vercel.app" width="100%"/>
-</div>
