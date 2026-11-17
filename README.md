@@ -1,8 +1,5 @@
 <div align="center">
 
-<!-- Save your custom banner to assets/banner.png in your repository -->
-<img src="assets/banner.png" alt="KYLIAN YAMAL DS Tactical Banner" width="100%"/>
-
 # ⚽ PITCH COMMAND AI
 ### Frame-Level Ball Possession from Tactical Tracking Data
 
@@ -15,6 +12,19 @@
 **Squad:** Gaddam Yashas • Kaivalya R Nayak • Kevin Alexandar
 
 *No black-box neural networks. No external data. Just pure tactical geometry, physics, and football IQ.*
+
+```text
+╔═════════════════════════════════════╤═════════════════════════════════════╗
+║ ┌───────────┐                       │                       ┌───────────┐ ║
+║ │           │                 . - ~ ┴ ~ - .                 │           │ ║
+║ │  ┌─────┐  │              .-'             '-.              │  ┌─────┐  │ ║
+║ │  │  H  │  │             /         ●         \             │  │  A  │  │ ║
+║ │  └─────┘  │            │      105.3m × 68m   │            │  └─────┘  │ ║
+║ │           │             \                   /             │           │ ║
+║ └───────────┘              '-.             .-'              └───────────┘ ║
+║                               ' - ~ ┬ ~ - '                               ║
+╚═════════════════════════════════════╧═════════════════════════════════════╝
+```
 
 </div>
 
@@ -111,8 +121,6 @@ pip install -r requirements-mine.txt
 ### 2. Load the Match Files
 Place the downloaded competition match files inside the `data/` directory *(excluded from version control)*:
 ```text
-├── assets/
-│   └── banner.png
 ├── data/                  # <-- Place raw match files here
 ├── evaluation/
 │   ├── validate_submission.py
@@ -143,3 +151,11 @@ python evaluation/validate_submission.py evaluation/results/my_v4.csv
 * **Window-Based Restarts:** Fixed Smart Tagging buffers can delay restart detection by a few seconds; future versions will trigger restarts on **first purposeful ball acceleration**.
 * **Proximity-Only Control:** Adding explicit **touch/pass impulse detection** and utilizing the Smart Tagging `Team` field on restarts will sharpen turnover precision.
 * **Multi-Match Calibration:** Current thresholds are grounded in football domain logic; training parameters across multiple labeled matches will improve cross-match generalization.
+
+---
+
+<div align="center">
+
+**Built with ⚽ and pure geometry by KYLIAN YAMAL DS**
+
+</div>
